@@ -80,6 +80,9 @@ public class GameScreenRenderer implements Disposable {
 
     private void renderHoveredCell() {
         FieldPosition hoveredCellPos = controller.getHoveredCellPos();
+        if (hoveredCellPos == null) {
+            return;
+        }
 
         int posX = (int) ((float) hoveredCellPos.x() / Constants.GAME_FIELD_SIZE * Constants.GAME_RESOLUTION);
         int posY = (int) ((float) hoveredCellPos.y() / Constants.GAME_FIELD_SIZE * Constants.GAME_RESOLUTION);

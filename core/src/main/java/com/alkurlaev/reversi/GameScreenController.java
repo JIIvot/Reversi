@@ -17,7 +17,7 @@ public class GameScreenController implements InputProcessor {
 
     private Set<FieldPosition> accessibleToMoveCells;
 
-    private FieldPosition hoveredCellPos = new FieldPosition(-1, -1);
+    private FieldPosition hoveredCellPos;
 
     private GameScreenRenderer renderer;
 
