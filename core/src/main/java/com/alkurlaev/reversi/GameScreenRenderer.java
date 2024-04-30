@@ -43,17 +43,14 @@ public class GameScreenRenderer implements Disposable {
     }
 
     private void renderField() {
-        CellState[][] field = controller.getField();
+        renderer.setColor(Constants.WHITE_CELL_COLOR);
+        for (FieldPosition cell : controller.getWhiteCells()) {
+            renderGameChip(cell.x(), cell.y());
+        }
 
-        for (int y = 0; y < Constants.GAME_FIELD_SIZE; y++) {
-            for (int x = 0; x < Constants.GAME_FIELD_SIZE; x++) {
-                if (field[y][x] == CellState.EMPTY) {
-                    continue;
-                }
-
-                renderer.setColor(field[y][x].cellColor);
-                renderGameChip(x, y);
-            }
+        renderer.setColor(Constants.BLACK_CELL_COLOR);
+        for (FieldPosition cell : controller.getBlackCells()) {
+            renderGameChip(cell.x(), cell.y());
         }
     }
 

@@ -270,10 +270,6 @@ public class GameScreenController implements InputProcessor {
         this.renderer = renderer;
     }
 
-    public CellState[][] getField() {
-        return field;
-    }
-
     public boolean isWhiteTurn() {
         return whiteTurn;
     }
@@ -284,5 +280,13 @@ public class GameScreenController implements InputProcessor {
 
     private boolean isCellAccessibleToMove(FieldPosition fieldPosition) {
         return accessibleToMoveCells.contains(fieldPosition);
+    }
+
+    public Set<FieldPosition> getWhiteCells() {
+        return whiteCells;
+    }
+
+    public Set<FieldPosition> getBlackCells() {
+        return blackCells;
     }
 }
